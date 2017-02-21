@@ -1,0 +1,7 @@
+language: ruby
+services:
+  - docker
+install:
+  - sudo make build
+script:
+  - make test

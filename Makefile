@@ -14,7 +14,7 @@ ENV = $(addprefix --env ,$(foreach env,$(DOCKER_ENV),$(env)=$(shell echo $$$(env
 build:
 	docker build -t $(IMAGE_NAME) .
 test:
-	docker run $(VOLUME) $(ENV) -u root $(IMAGE_NAME) danger
+	docker run $(VOLUME) $(ENV) -u $(shell id -u) $(IMAGE_NAME) danger
 local:
 	docker run $(VOLUME) $(IMAGE_NAME) danger local
 bash:

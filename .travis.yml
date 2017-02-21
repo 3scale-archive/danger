@@ -2,7 +2,7 @@ language: ruby
 services:
   - docker
 install:
-  - sudo make build
+  - make build
 script:
   - make test
 after_success:

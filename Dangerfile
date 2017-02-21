@@ -8,6 +8,17 @@ warn("PR is classed as Work in Progress") if github.pr_title.include? "[WIP]"
 # Warn when there is a big PR
 warn("Big PR") if git.lines_of_code > 500
 
-# Don't let testing shortcuts get into master by accident
-fail("fdescribe left in tests") if `grep -r fdescribe specs/ `.length > 1
-fail("fit left in tests") if `grep -r fit specs/ `.length > 1
+changelog.check
+
+markdown_files = git.modified_files.grep(/\.md$/)
+prose.lint_files markdown_files
+
+# Look for spelling issues
+prose.ignored_words = []
+prose.check_spelling markdown_files
+
+junit.report
+
+mention.run
+
+commit_lint.check

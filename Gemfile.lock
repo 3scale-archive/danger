@@ -40,19 +40,8 @@ GEM
       multipart-post (>= 1.2, < 3)
     faraday-http-cache (1.3.1)
       faraday (~> 0.8)
-    ffi (1.9.17)
-    ffi-aspell (1.1.0)
-      ffi
     git (1.3.0)
     kramdown (1.13.2)
-    mdspell (0.2.0)
-      ffi-aspell (~> 1.1)
-      kramdown (~> 1.8)
-      mixlib-cli (~> 1.5)
-      mixlib-config (~> 2.2)
-      rainbow (~> 2.0)
-    mixlib-cli (1.7.0)
-    mixlib-config (2.2.4)
     multipart-post (2.0.0)
     nap (1.1.0)
     octokit (4.6.2)
@@ -60,8 +49,6 @@ GEM
     open4 (1.3.4)
     ox (2.4.9)
     public_suffix (2.0.5)
-    rainbow (2.2.1)
-    rake (12.0.0)
     sawyer (0.8.1)
       addressable (>= 2.3.5, < 2.6)
       faraday (~> 0.8, < 1.0)
@@ -79,8 +66,6 @@ DEPENDENCIES
   danger-junit!
   danger-mention!
   danger-prose!
-  mdspell!
-  rake!
 
 BUNDLED WITH
    1.14.4

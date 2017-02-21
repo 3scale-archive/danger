@@ -5,3 +5,8 @@ install:
   - sudo make build
 script:
   - make test
+after_success:
+- if [ "${TRAVIS_PULL_REQUEST}" = "false" ] || [ -n "${TRAVIS_TAG}" ]; then
+  docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" quay.io;
+  make push;
+  fi

@@ -2,6 +2,7 @@ FROM centos/ruby-23-centos7
 
 ADD Gemfile* /tmp/src/
 USER 0
+ENV LANG=en_US.UTF8
 RUN $STI_SCRIPTS_PATH/assemble \
  && git config --global user.email "danger@localhost" \
  && git config --global user.name "Danger" \
